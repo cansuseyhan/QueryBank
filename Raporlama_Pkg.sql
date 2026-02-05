@@ -936,17 +936,3 @@ LEFT JOIN MV_KrediStage mv
        ON m.MusteriID = mv.MusteriID;
  
 SELECT * FROM VW_RiskAnaliz;
-
--- Parquet dosyasını external table olarak tanımlama
-CREATE EXTERNAL TABLE ParquetSiparisler
-(
-    SiparisID INT,
-    MusteriID INT,
-    SiparisTarihi DATE,
-    Tutar DECIMAL(10,2)
-)
-WITH (
-    LOCATION = 'C:\Users\User\Desktop\GitHub\QueryBank',
-    DATA_SOURCE = MyDataLake,
-    FILE_FORMAT = ParquetFileFormat
-);
